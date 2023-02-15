@@ -9,6 +9,7 @@ int main(void)
     OX_InitPages();
     OX_InitDashboard();
 
+    // scan for games
     OX_ScanGames("F:\\Games\\");
     OX_RefreshPageGames(OX_GetPage("games"));
 
@@ -17,6 +18,8 @@ int main(void)
     OX_DebugPrint("RAM: %u/%u KB\n", OX_GetMemoryUsed() / KILOBYTE, OX_GetMemoryTotal() / KILOBYTE);
     OX_DebugPrint("Entering main loop...\n");
     Sleep(2000);
+
+    // main loop
     SDL_Event e;
     while (true)
     {
@@ -25,6 +28,8 @@ int main(void)
         {
             OX_HandleInputEvents(&e);
         }
+
+        // force quit
         if (OX_GetGamepadButton(OX_GAMEPAD_1, OX_GAMEPAD_BTN_START)) { SDL_Quit(); exit(0); }
 
         OX_UpdateDashboard();
