@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/../../nxdk/lib/**",
+                "${workspaceFolder}/../../nxdk/lib/sdl/**",
+                "${workspaceFolder}/../../nxdk/lib/sdl/SDL2/**"
+            ],
+            "defines": [],
+            "compilerPath": "${workspaceFolder}/../../nxdk/bin/nxdk-cxx",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x86"
+        }
+    ],
+    "version": 4
+}
