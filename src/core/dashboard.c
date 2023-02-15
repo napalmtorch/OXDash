@@ -27,12 +27,7 @@ void OX_InitDashboard()
     _label_time = OX_CreateLabel(640 - 100, 0, true, "", "label_tm", NULL);
  
     OX_INIFile file = OX_LoadINI("A:\\config.ini");
-
-    char* vid_mode = OX_ReadStringINI(&file, "VIDEO", "mode");
-    int   bpp      = OX_ReadIntINI(&file,    "VIDEO", "bpp");
-    int   refresh  = OX_ReadIntINI(&file,    "VIDEO", "refresh");
-    char* user     = OX_ReadStringINI(&file, "MISC",  "user");
-    OX_DebugPrint("VID:%s BPP:%d REFRESH:%d USER:%s\n", vid_mode, bpp, refresh, user);
+    OX_SetOverscan(OX_ReadIntINI(&file, "OVERSCAN", "x"), OX_ReadIntINI(&file, "OVERSCAN", "y"), OX_ReadIntINI(&file, "OVERSCAN", "w"), OX_ReadIntINI(&file, "OVERSCAN", "h"));
     OX_FreeINI(&file);
 
     OX_DebugPrint("Initialized dashboard\n");
@@ -100,7 +95,11 @@ void OX_DrawDashboard()
     }
 }
 
-void OX_SetOverscan(int x, int y, int w, int h) { _overscan = OX_CreateRect(x, y, w, h); }
+void OX_SetOverscan(int x, int y, int w, int h) 
+{ 
+    _overscan = OX_CreateRect(x, y, w, h); 
+    OX_DebugPrint("Set overscan: %dx%dx%dx%d\n", x, y, w, h);
+}
 
 OX_Rect OX_GetOverscan() { return _overscan; }
 
