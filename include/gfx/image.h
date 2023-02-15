@@ -5,11 +5,12 @@
 #include "gfx/psf.h"
 #include "gfx/sprfont.h"
 
+/// @brief Image formats
 typedef enum
 {
-    OX_IMGTYPE_INVALID,
-    OX_IMGTYPE_BMP,
-    OX_IMGTYPE_PNG,
+    OX_IMGTYPE_INVALID,     // Invalid image format
+    OX_IMGTYPE_BMP,         // Bitmap
+    OX_IMGTYPE_PNG,         // Portable Network Graphics
 } OX_IMGTYPE;
 
 typedef struct

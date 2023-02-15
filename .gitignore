@@ -1,4 +1,8 @@
 /.vscode
-/OXDash.iso
 /bin
-/main.exe
+.d
+*.cpp.d
+*.c.d
+*.obj
+*.o
+*.exe
