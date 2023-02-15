@@ -1,8 +1,0 @@
-/.vscode
-/bin
-.d
-*.cpp.d
-*.c.d
-*.obj
-*.o
-*.exe
